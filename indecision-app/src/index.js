@@ -16,6 +16,8 @@ const template = (
             <li>Item Two</li>
         </ol>
         <form>
+            <input type="text" name="option"/>
+            <button>Add Option</button>
         </form>
     </div>
 )
