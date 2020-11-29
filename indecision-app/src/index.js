@@ -10,6 +10,7 @@ const removeAll = ()=> {
     app.options = []
     renderApp()
 }
+
 const onFormSubmit = (e) => {
     e.preventDefault()
     const option = e.target.elements.option.value
@@ -26,6 +27,7 @@ const onMakeDecision = () =>{
     const option = app.options[randonNum]
     console.log(option);
 }
+
 const appRoot = document.getElementById('app')
 
 const renderApp = () =>{
@@ -35,7 +37,7 @@ const renderApp = () =>{
             <h1>{app.title}</h1>
             {app.subtitle && <p>{app.subtitle}</p>}
             <p>{app.options.length > 0 ? 'Here are your options': 'No Options'}</p>
-            <button disabled={app.options.length === 0} onClick={onMakeDecision}>What should do?</button>
+            <button disabled={app.options.length === 0} onClick={onMakeDecision}>What should you do?</button>
             <button onClick={removeAll}>Remove All</button>
             <ol>
             {
