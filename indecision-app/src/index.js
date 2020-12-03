@@ -48,11 +48,7 @@ class IndecisionApp extends React.Component{
         )
     }
 }
-<<<<<<< HEAD
 const Header = (props) => {
-=======
-const Action = (props) => {
->>>>>>> 45ce50c9396041f7fba19ea5001bac720087a5a0
     return (
         <div>
             <h1>{props.title}</h1>
@@ -64,19 +60,11 @@ const Action = (props) => {
 const Action = (props) => {
     return (
         <div>
-<<<<<<< HEAD
         <button onClick={props.handlePick} disabled={!props.hasOptions}>
             What should I do?
         </button>
         </div>
     )
-=======
-            <button onClick={props.handlePick} disabled={!props.hasOptions}>
-                What should I do?
-            </button>
-        </div>
-    )   
->>>>>>> 45ce50c9396041f7fba19ea5001bac720087a5a0
 }
 
 const Options = (props) => {
@@ -95,11 +83,7 @@ const Option = (props) => {
         <div>
             Option: {props.optionText}
         </div>
-<<<<<<< HEAD
     )  
-=======
-    )   
->>>>>>> 45ce50c9396041f7fba19ea5001bac720087a5a0
 }
 
 class AddOption extends React.Component{
