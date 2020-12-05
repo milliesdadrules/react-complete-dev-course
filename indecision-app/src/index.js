@@ -10,11 +10,17 @@ class IndecisionApp extends React.Component{
         }
     }
     handleDeleteOptions(){
-        this.setState(() => {
-            return {
-                options: []
-            }
-        })
+        this.setState(() => ({options: []}))
+    }
+
+    handleDeleteOption(optionToRemove){
+ 
+        this.setState((prevState)=>({ 
+            options: prevState.options.filter((option)=>{
+                return optionToRemove !== option
+            })
+        }))
+
     }
     handlePick(){
         const randonNum = Math.floor(Math.random() * this.state.options.length)
@@ -27,14 +33,8 @@ class IndecisionApp extends React.Component{
         } else if (this.state.options.indexOf(option) > -1){
             return "This option already exists"
         }
-        this.setState((prevState)=> {
-            return {
-                options: prevState.options.concat([option])
-            }
-        }) 
-    }
-    handleDeleteOption(optionToRemove){
-        console.log('remove', optionToRemove);
+        this.setState((prevState)=> ({options: prevState.options.concat([option])}))
+       
     }
     render(){
         const title = 'Indecision'
@@ -94,9 +94,12 @@ const Option = (props) => {
     return (
         <div>
             {props.optionText}
-            <button onClick={(e)=>{
-                props.handleDeleteOption(props.optionText)
-            }}>remove</button>
+            <button
+                onClick={(e)=>{
+                    props.handleDeleteOption(props.optionText)
+                }}>
+                remove
+            </button>
         </div>
     )  
 }
@@ -115,9 +118,7 @@ class AddOption extends React.Component{
         const option = e.target.elements.option.value.trim()
         const error = this.props.handleAddOption(option)
 
-        this.setState(() => {
-            return { error }
-        })
+        this.setState(() => ({ error }))
     }
     render(){
         return (
