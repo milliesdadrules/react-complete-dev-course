@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import { render } from "react-dom";
 class IndecisionApp extends React.Component{
     constructor(props){
         super(props)
@@ -150,4 +152,4 @@ class AddOption extends React.Component{
     }
 }
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'))
+render(<IndecisionApp />, document.getElementById('app'))
