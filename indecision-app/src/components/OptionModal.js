@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import Modal from 'react-modal'
 
 const OptionModal = () => (
-    <div>
-        some text
-    </div>
+    <Modal>
+        <h3>Selected Option</h3>
+    </Modal>
 )
 
 export default OptionModal
