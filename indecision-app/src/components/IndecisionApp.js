@@ -7,7 +7,8 @@ import OptionModal from './OptionModal'
 
 export default class IndecisionApp extends React.Component{
     state = {
-        options: []
+        options: [],
+        selectedOption: undefined
     }
 
     handleDeleteOptions = () => {
@@ -24,7 +25,7 @@ export default class IndecisionApp extends React.Component{
     handlePick = () => {
         const randonNum = Math.floor(Math.random() * this.state.options.length)
         const option = this.state.options[randonNum]
-        alert(option)
+        this.setState(() => ({selectedOption: option}))
     }
     handleAddOption = (option) => {
         if(!option){
@@ -33,7 +34,9 @@ export default class IndecisionApp extends React.Component{
             return "This option already exists"
         }
         this.setState((prevState)=> ({options: prevState.options.concat([option])}))
-       
+    }
+    handleClearSelectedOption = () => {
+        this.setState(() => ({selectedOption: undefined})) 
     }
     componentDidMount(){
         try{
@@ -62,7 +65,9 @@ export default class IndecisionApp extends React.Component{
                 handleDeleteOption={this.handleDeleteOption}
                 />
                 <AddOption handleAddOption={this.handleAddOption}/>
-                <OptionModal />
+                <OptionModal 
+                selectedOption={this.state.selectedOption}
+                handleClearSelectedOption={this.handleClearSelectedOption}/>
             </div>
         )
     }
