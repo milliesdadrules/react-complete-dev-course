@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route } from 'react-router-dom'
 import 'normalize.css/normalize.css'
 import './style/main.scss'
-render(<p>This is my boilerplate</p>, document.getElementById('app'))
+ReactDOM.render(<p>This is my boilerplate</p>, document.getElementById('app'))
