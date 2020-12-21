@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 
-
+//Action generators
 const incrementCount = ({ incrementBy = 1 } = {}) => ({
     type: 'INCREMENT',
     incrementBy
@@ -20,6 +20,7 @@ const setCount = ({ count }) => ({
     count
 })
 
+// Redux Reducer
 const countReducer = (state = { count: 0 }, action) => {
     switch(action.type){
         case 'INCREMENT':
