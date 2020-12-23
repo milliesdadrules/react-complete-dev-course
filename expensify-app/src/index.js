@@ -17,12 +17,13 @@ const unsubscribe = store.subscribe(() => {
     console.log(visibleExpenses);
 })
 
-store.dispatch(addExpense({ description: 'Water Bill', amount: 1000, createdAt: 100}))
-store.dispatch(addExpense({ description: 'Gas Bill', amount: 2000, createdAt: 102}))
+store.dispatch(addExpense({ description: 'Water Bill', amount: 1000}))
+store.dispatch(addExpense({ description: 'Gas Bill', amount: 2000}))
+
 store.dispatch(setTextFilter('water'))
 
 setTimeout(() => {
-    store.dispatch(setTextFilter('Gas'))
+    store.dispatch(setTextFilter('bill'))
 }, 3000)
 
 const jsx = (
