@@ -21,6 +21,10 @@ store.dispatch(addExpense({ description: 'Water Bill', amount: 1000, createdAt: 
 store.dispatch(addExpense({ description: 'Gas Bill', amount: 2000, createdAt: 102}))
 store.dispatch(setTextFilter('water'))
 
+setTimeout(() => {
+    store.dispatch(setTextFilter('Gas'))
+}, 3000)
+
 const jsx = (
     <Provider store={store}>
         <AppRouter />
