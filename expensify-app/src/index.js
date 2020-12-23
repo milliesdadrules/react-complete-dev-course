@@ -18,7 +18,6 @@ const unsubscribe = store.subscribe(() => {
 
 store.dispatch(addExpense({ description: 'Water Bill', amount: 1000, createdAt: 100}))
 store.dispatch(addExpense({ description: 'Gas Bill', amount: 2000, createdAt: 102}))
-store.dispatch(setTextFilter('bill'))
 store.dispatch(setTextFilter('water'))
 
 ReactDOM.render(<AppRouter />, document.getElementById('app'))
