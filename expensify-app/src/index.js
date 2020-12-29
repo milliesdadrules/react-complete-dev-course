@@ -14,7 +14,6 @@ const store = configureStore()
 const unsubscribe = store.subscribe(() => {
     const state = store.getState() // Get current state
     const visibleExpenses = getVisibleExpenses(state.expenses, state.filters) // Create call to function with 2 params expenses array and filters object
-    console.log(visibleExpenses);
 })
 
 store.dispatch(addExpense({ description: 'Water Bill', amount: 4500}))
