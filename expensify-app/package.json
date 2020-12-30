@@ -8,6 +8,9 @@
     "build": "webpack --mode production",
     "test": "jest"
   },
+  "jest": {
+    "verbose": true
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
