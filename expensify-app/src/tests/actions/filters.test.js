@@ -2,10 +2,11 @@ import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } fro
 import moment from 'moment'
 
 test('should generate set text filter action object with provided value', () => {
-    const action = setTextFilter('rent')
+    const text = 'some text'
+    const action = setTextFilter(text)
     expect(action).toEqual({
         type: 'SET_TEXT_FILTER',
-        text: 'rent'
+        text
     })
 })
 
