@@ -4,6 +4,7 @@
   "description": "",
   "main": "input.js",
   "scripts": {
+    "serve": "live-server public/",
     "dev-server": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "test": "jest"
